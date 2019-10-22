@@ -45,8 +45,10 @@ def generate_csv(cars):
 
 def modify_csv_delimiter(input_csv_file):
     new_delimiter = ":"
+    # ex 3.a 
     if os.path.exists(input_csv_file):
         
+        # ex 3.b
         with open(input_csv_file, mode="r") as infile:
             reader = csv.reader(infile)    
             with open("new_delimiter.csv", mode="w") as outfile:
@@ -72,16 +74,17 @@ if __name__ == "__main__":
         (10, 'Ford', 5, 15000)
         )
 
-
+    # ex. 1
     ex1 = compute_statistics(cars)
     # print(ex1[0]) # valoarea totala a masinilor de pe stoc
     # print(ex1[1]) # valoarea totala a masinilor pentru fiecare brand
     # print(ex1[2]) # nr. total de masini din stoc
     # print(ex1[3]) # brandul de pe stoc cu valoarea totala a masinilor cea mai mare
 
-        
+    # ex. 2
     generate_csv(cars)
 
+    # ex. 3
     dirpath = os.getcwd()
     modify_csv_delimiter(dirpath + "/cars.csv")
 
