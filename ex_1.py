@@ -41,7 +41,7 @@ def generate_csv(cars):
         for row in cars:
             file_writer.writerow(row)
          
-    print("csv written successfuly")
+        print("\n2 - Fisierul 'cars.csv' a fost generat cu succes")
 
 def modify_csv_delimiter(input_csv_file):
     new_delimiter = ":"
@@ -54,7 +54,8 @@ def modify_csv_delimiter(input_csv_file):
             with open("new_delimiter.csv", mode="w") as outfile:
                 writer = csv.writer(outfile, delimiter=new_delimiter)
                 writer.writerows(reader)
-        print("New delimiter run with success")
+        print("\n3 - Fisierul 'new_delimiter.csv' a fost generat cu succes")
+        print("\tDelimitatorul ',' a fost inlocuit cu '{}'".format(new_delimiter))
     else:
         print("Path Error - file '" + input_csv_file + "' not found")
 
@@ -76,10 +77,17 @@ if __name__ == "__main__":
 
     # ex. 1
     ex1 = compute_statistics(cars)
-    # print(ex1[0]) # valoarea totala a masinilor de pe stoc
-    # print(ex1[1]) # valoarea totala a masinilor pentru fiecare brand
-    # print(ex1[2]) # nr. total de masini din stoc
-    # print(ex1[3]) # brandul de pe stoc cu valoarea totala a masinilor cea mai mare
+    print("\n1.1 - Valoarea totala a masinilor de pe stoc:")
+    print(ex1[0]) # valoarea totala a masinilor de pe stoc
+
+    print("\n1.2 - Valoarea totala a masinilor pentru fiecare brand:")
+    print(ex1[1]) # valoarea totala a masinilor pentru fiecare brand
+
+    print("\n1-3 - Nr. total de masini din stoc:")
+    print(ex1[2]) # nr. total de masini din stoc
+
+    print("\n1-4 - Brandul de pe stoc cu valoarea totala a masinilor cea mai mare:")
+    print(ex1[3]) # brandul de pe stoc cu valoarea totala a masinilor cea mai mare
 
     # ex. 2
     generate_csv(cars)
