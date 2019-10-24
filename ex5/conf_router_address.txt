@@ -1,0 +1,9 @@
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int GigabitEthernet 0/0
+R1(config-if)#ip address 192.168.122.10 255.255.255.0
+R1(config-if)#no shut
+R1(config-if)#
+R1(config-if)#end
+R1#
+

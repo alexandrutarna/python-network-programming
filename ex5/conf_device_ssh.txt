@@ -1,0 +1,45 @@
+Router#en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#host R1
+R1(config)#username sasa pass cisco
+R1(config)#username sasa priv 15
+R1(config)#
+R1(config)#line vty 0 4
+R1(config-line)#login local
+R1(config-line)#transport input all
+R1(config-line)#
+R1(config-line)#ip domain-name cciepython.com
+R1(config)#crypto key generate rsa
+The name for the keys will be: R1.cciepython.com
+Choose the size of the key modulus in the range of 360 to 4096 for your
+  General Purpose Keys. Choosing a key modulus greater than 512 may take
+  a few minutes.
+
+How many bits in the modulus [512]: 1024
+% Generating 1024 bit RSA keys, keys will be non-exportable...
+[OK] (elapsed time was 0 seconds)
+
+R1(config)#
+*Oct 22 22:33:12.531: %SSH-5-ENABLED: SSH 1.99 has been enabled
+R1(config)#end
+R1#wr
+
+
+=========
+copy-paste
+en
+conf t
+host R1
+username sasa pass cisco
+username sasa priv 15
+
+line vty 0 4
+login local
+transport input all
+
+ip domain-name cciepython.com
+crypto key generate rsa
+1024
+end
+wr
