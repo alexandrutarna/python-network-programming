@@ -5,18 +5,22 @@ import plotly.graph_objects as go
 
 def save_to_csv(my_dict):
     header = ('Anul', 'Cifra_afaceri')
-    with open('cifra_afaceri.csv', 'w') as csv_file:
+    with open('cifra_afaceri.txt', 'w') as csv_file:
         file_writer = csv.writer(csv_file)
         file_writer.writerow( header )
 
         for row in my_dict:
             file_writer.writerow((row, my_dict[row]))
 
+        print("b - Datele au fost salvate in fisierul 'cifra_afaceri.txt'")
+
 
 def serialize_dict(my_dict):
     pickle_out = open("serialized_dict.pickle","wb")
     pickle.dump(my_dict, pickle_out)
     pickle_out.close()
+
+    print("\nc - Dictionarul a fost serializat in fisierul 'serialized_dict.pickle'\n")
 
 
 def display_chart(cifra_afaceri):
@@ -34,6 +38,8 @@ def display_chart(cifra_afaceri):
                     )
     fig.show()
 
+    print("d - Chart-ul a fost creat cu succes, verificati in browser rezultatul")
+
 if __name__ == "__main__":
     
     # a
@@ -47,6 +53,9 @@ if __name__ == "__main__":
         '2016' : 380000, 
         '2017' : 400000
     }
+
+    print("a - Dictionarul cifra de afaceri:")
+    print(cifra_afaceri)
 
 
     # b
